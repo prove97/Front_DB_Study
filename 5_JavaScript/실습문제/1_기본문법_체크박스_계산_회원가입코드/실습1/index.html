@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제1</title>
+    
+    <style>
+        #categoryArea{
+            border: 1px solid red;
+            height: 150px;
+            width: 800px;
+        }
+
+        .areaSize{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .areaSize>div{
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Practice1</h1>
+    <br>
+    <form action="">
+        <fieldset class="areaSize">
+            <legend>취미</legend>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="전체선택" id="all" onchange="allCheck()">
+                    <label for="all">전체선택</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="종합" id="category01" onchange="checkBoxTrigger()">
+                    <label for="category01">종합</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" name="category" value="여행" id="category02" onchange="checkBoxTrigger()">
+                    <label for="category02">여행</label>
+                </div>                
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="소설" id="category03" onchange="checkBoxTrigger()">
+                    <label for="category03">소설</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="category" value="과학" id="category04" onchange="checkBoxTrigger()">
+                    <label for="category04">과학</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="시/에세이" id="category05" onchange="checkBoxTrigger()">
+                    <label for="category05">시/에세이</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="category" value="역사/문화" id="category06" onchange="checkBoxTrigger()">
+                    <label for="category06">역사/문화</label>
+                </div>
+                
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="경제/경영" id="category07" onchange="checkBoxTrigger()">
+                    <label for="category07">경제/경영</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="category" value="외국어" id="category08" onchange="checkBoxTrigger()">
+                    <label for="category08">외국어</label>
+                </div>
+                
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="자기계발" id="category09" onchange="checkBoxTrigger()">
+                    <label for="category09">자기계발</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="category" value="컴퓨터" id="category10" onchange="checkBoxTrigger()">
+                    <label for="category10">컴퓨터</label>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="category" value="아동" id="category11" onchange="checkBoxTrigger()">
+                    <label for="category11">아동</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="category" value="만화" id="category12" onchange="checkBoxTrigger()">
+                    <label for="category12">만화</label>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <br>
+
+    <button onclick="accessName()">카테고리 선택</button>
+    <div id="categoryArea"></div>
+    
+    <script>
+        function allCheck(){
+            const list = document.getElementsByName("category");
+            for(const checkBox of list){
+                checkBox.checked = document.getElementById("all").checked;
+            }            
+        }
+
+        function checkBoxTrigger(){
+            let allCheck = true;
+            const list = document.getElementsByName("category");
+
+            for(let checkBox of list){
+                if(checkBox.value == "전체선택"){
+                    continue;
+                }
+
+                if(!checkBox.checked){
+                    allCheck = false;
+                }
+            }
+
+            const allCheckBox = document.getElementById("all");
+            allCheckBox.checked = allCheck;
+        }
+
+        function accessName(){        
+            let list = document.getElementsByName("category");                        
+            let area = document.getElementById("categoryArea"); 
+            
+            console.log(list);
+            console.log(area);
+            area.innerHTML = "";
+
+            for(let checkBox of list){
+                if(checkBox.checked && checkBox.value != "전체선택"){
+                    area.innerHTML += (checkBox.value + " ");
+                }
+            }
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

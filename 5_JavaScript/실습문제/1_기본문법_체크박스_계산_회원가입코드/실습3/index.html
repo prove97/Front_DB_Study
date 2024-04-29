@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제3</title>
+    <script src="resources/script.js" rel="JavaScript"></script>
+</head>
+<body>
+    <h1>Practice3</h1>
+
+    <div>
+        <fieldset>
+            <legend>회원가입</legend>            
+            <div>
+                <span>아이디</span> :                 
+                <input type="text" id="inputID"> <label id="checkID"></label>            
+            </div><br>            
+            <div>
+                <span>비밀번호</span> :             
+                <input type="password" id="inputPWD"> 
+            </div><br>
+            <div>
+                <span>비밀번호 확인</span> : 
+                <input type="password" id="reInputPWD">                  
+                <label id="checkPWD"></label>
+            </div><br>
+            <div>
+                <span>이름</span> : 
+                <input type="text" id="inputName">                
+            </div><br>
+            <button onclick="joinMember()">회원가입</button>                
+
+        </fieldset>
+    </div>
+
+</body>
+</html>

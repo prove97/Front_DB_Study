@@ -1,0 +1,45 @@
+/* header{
+    height: 80px;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 5px 10px;
+}
+
+header>div{
+    width: 30%;
+    height: 90%;
+}
+
+.KH_logo>img{
+    width: 110px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+} 
+
+.search>input{
+    width: 200px;
+    height: 25px;
+    margin-right: 0.5px;
+}
+
+.search-img{
+    width: 80px;
+    height: 31px;
+
+    background: white;
+    border: solid 1px;
+}
+
+.search>button>img{
+    width: 45%;
+    height: 100%;
+} */

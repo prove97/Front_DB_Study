@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습1</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 600px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice4</h1>
+    <form action="">
+        <fieldset>
+            <legend>구매 정보</legend>
+            <ul>
+                <li>구매자 : <input type="text" id="customer" placeholder="구매자의 이름을 입력하세요"></li>
+                <li>상품명 : <input type="text" id="productName" placeholder="구매 상품 명을 입력하세요"></li>
+                <li>가격 : <input type="text" id="price" placeholder="구매 가격을 입력하세요"></li>
+                <li>구매 수량 : <input type="number" id="quantity" min="10" max="100" placeholder="최소 10"></li>
+                <li>납품 등급 : <input type="range" id="rare" min="1" max="9" step="2"></li>
+                <li>기타 사항 :  <textarea name="" id="etcText" cols="20" rows="5"></textarea>                    
+            </ul>
+        </fieldset>
+        <br>
+        <input type="button" value="입력 값 출력하기" onclick="printData()">
+    </form>
+    <br>
+
+    <div class="area" id="area1"></div>
+
+    <script>
+        function printData(){
+            const inputList = document.querySelectorAll("li>input");
+            const etcText = document.getElementById("etcText");
+            const area = document.getElementById("area1");
+
+            area.innerHTML = `구매자 명 : ${inputList[0].value}님 <br>
+                              상품 명 : ${inputList[1].value} <br>
+                              가격 : ${inputList[2].value} <br>
+                              구매 수량 : ${inputList[3].value}개 <br>
+                              납품등급 : ${inputList[4].value}등급 <br>
+                              기타사항 : ${etcText.value}`
+            
+        }
+    </script>
+</body>
+</html>

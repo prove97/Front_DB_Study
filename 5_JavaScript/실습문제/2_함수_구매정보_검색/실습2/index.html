@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2</title>
+    <style>
+        .area {
+            background: gainsboro;
+            width: 600px;
+            height: 50px;
+            padding: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .searchBar {
+            display: flex;
+            justify-content: start;
+
+        }
+
+        .btn {
+            margin-left: 10px;
+        }
+
+        fieldset {
+            display: flex;
+            justify-content: center;
+        }
+
+        fieldset>div {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice5</h1>
+    <fieldset class="area" style="background: none;">
+        <legend align="center">검색할 항목을 선택하세요.</legend>
+        <div>
+            <input type="radio" name="element" id="title" onclick="printTitle()">
+            <label for="title">제목</label>
+        </div>
+        <div>
+            <input type="radio" name="element" id="date" onclick="printDate()">
+            <label for="date">날짜</label>
+        </div>
+        <div>
+            <input type="radio" name="element" id="author" onclick="printAuthor()">
+            <label for="author">작성자</label>
+        </div>
+    </fieldset>
+
+    <br>
+    <div class="area hide" id="titleArea">
+        검색할 제목을 입력하세요 : <br>
+        <span>
+            <input type="text">
+            <input type="button" class="btn" value="검색">
+        </span>
+    </div>
+
+    <div class="area hide" id="dateArea">
+        검색할 날짜를 선택하세요 : <br>
+        <span>
+            <input type="date"> -
+            <input type="date">
+            <input type="button" class="btn" value="검색">
+        </span>
+    </div>
+
+    <div class="area hide" id="authorArea">
+        검색할 작성자 아이디를 입력하세요 : <br>
+        <span class="searchBar">
+            <input type="text">
+            <input type="button" class="btn" value="검색">
+        </span>
+    </div>
+
+    <script>
+        function printTitle() {
+            hideAll();
+            const area = document.getElementById("titleArea");
+            area.style.display = "block";
+
+        }
+        function printDate() {
+            hideAll();
+            const area = document.getElementById("dateArea");
+            area.style.display = "block";
+
+        }
+
+        function printAuthor() {
+            hideAll();
+            const area = document.getElementById("authorArea");
+            area.style.display = "block";
+
+        }
+
+        function hideAll() {
+            document.getElementById("titleArea").style.display = "none";
+            document.getElementById("dateArea").style.display = "none";
+            document.getElementById("authorArea").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#wrap{
+    width: 1100px;
+    /* 해당 넓이를 제거하고 미디어 쿼리를 이용해서 제어하면 -> 반응형 */
+    margin: 0 auto;
+    padding: 10px 100px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.bo{
+    border: 1px solid rgb(207, 206, 206);
+    /* margin: 5px; */
+}
+
+li{
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+/* header */
+header{
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 20px;
+}
+.KH-logo{
+    display: flex;
+    align-items: center;
+
+}
+
+.search{
+    width: 350px;
+    height: 30px;
+    display: flex;
+}
+
+header .search input{
+    width: 70%;
+    height: 100%;
+    border: 1px solid rgb(180, 180, 180);
+    border-right: none;
+}
+
+.search-img{
+    outline: none;
+    width: 30%;
+    height: 100%;
+    border: 1px solid black;
+    background: url(../assets/image/search.png) no-repeat center/contain; 
+    /*contain : 공간안에서 이미지 자체의 비율에 따라 최대한 맞춰짐*/
+    /*cover : 공간을 다 채울수 있도록 이미지를 확대. 이미지가 잘리기도 함 */
+}
+
+/* nav */
+
+nav{
+    width: 100%;
+    padding: 10px 0;
+}
+
+nav>ul{
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+nav>ul>li{
+    width: 20%;
+    position: relative;
+}
+
+
+nav>ul>li>ul{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    padding-top: 5px 0px;
+    background: white;
+    display: none;
+}
+
+nav>ul>li a:hover+ul{
+    display: block;
+    
+}
+
+nav>ul ul:hover{
+    display: block;
+
+}
+
+
+nav li a{
+    color: gray;
+    font-weight: bold;
+}
+
+/* section */
+section{
+    width: 100%;
+    height: 450px;
+
+}
+
+.left-main-section{
+    width: calc(70%-10px);
+    float: left;
+}
+
+aside{
+    width: 30%;
+    float: right;
+}
+
+#banner, #login{
+    height: 100px;
+}
+
+#banner>img{
+    height: 100%;
+}
+
+#notifications{
+    display: flex;
+    height: 45px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#notifications ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+#notifications p{
+    font-size: 15px;
+}
+
+#notifications a{
+    font-weight: bold;
+}
+
+#articles{
+    height: 300px;
+    background: url(../assets/image/car.PNG) no-repeat center/contain;
+}
+
+/* aside */
+#login .login-input{
+    display: flex;
+    height: 75%;
+    width: 100%;
+}
+
+.login-input .input{
+    height: 100%;
+    width: 70%;
+}
+
+.login-input .input>input{
+    height: 50%;
+    width: 100%;
+}
+
+.login-input .btn{
+    height: 100%;
+    width: 30%;
+}
+.login-input .btn button{
+    height: 100%;
+    width: 100%;
+}
+
+
+#login .login-etc{
+    width: 100%;
+    height: 25%;
+}
+
+#login .login-etc ul{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#login .login-etc li{
+    font-size: 12px;
+    font-weight: 900;
+}
+
+#login .login-etc li span::after{
+    content: "|";
+    color: black;
+    margin: 0px 5px;
+}
+
+#shopping{
+    height: 345px;
+    background: url(../assets/image/shopping.PNG) no-repeat center/contain;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    clear: both;
+    padding: 15px;
+}
+
+footer a{
+    font-weight: bold;
+}
+
+footer ul{
+    display: flex;
+}
+
+footer li span::after{
+    content: "|";
+    color: black;
+    margin: 0px 20px;
+}
+
+.md-20{
+    margin-bottom: 20px;
+}
+
+.text-center{
+    text-align: center;
+}
